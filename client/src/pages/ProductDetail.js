@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import api from "../api/api";
+import api, { API_BASE_URL } from "../api/api";
 import styles from "./ProductDetail.module.css";
 
 export default function ProductDetail() {
@@ -63,11 +63,15 @@ export default function ProductDetail() {
           {/* Image */}
           <div className={styles.imageWrapper}>
             <img
-              src={product.photo_url || "https://via.placeholder.com/500?text=No+Image"}
+              src={
+                  product.photo_url 
+                    ? `${API_BASE_URL}/uploads/${product.photo_url.split('/').pop()}` 
+                    : "https://placehold.co/280x180?text=No+Image"
+                }
               alt={product.title}
               className={styles.image}
               onError={(e) => {
-                e.target.src = "https://via.placeholder.com/500?text=No+Image";
+                e.target.src = "https://placehold.co/500?text=No+Image";
               }}
             />
           </div>

@@ -4,6 +4,7 @@ import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  const API_BASE_URL = process.env.REACT_APP_API_URL;
   const {
     searchQuery,
     setSearchQuery,
@@ -38,7 +39,11 @@ export default function Home() {
           {products.map((p) => (
             <Link key={p.id} to={`/product/${p.id}`} className={styles.card}>
               <img
-                src={p.photo_url || "https://via.placeholder.com/280x180?text=No+Image"}
+                src={
+                  p.photo_url 
+                    ? `${API_BASE_URL}/uploads/${p.photo_url.split('/').pop()}` 
+                    : "https://placehold.co/280x180?text=No+Image"
+                }
                 alt={p.title}
               />
               <h3>{p.title}</h3>

@@ -6,6 +6,7 @@ import api from "../api/api";
 import styles from "./Profile.module.css";
 
 export default function Profile() {
+  const API_BASE_URL = process.env.REACT_APP_API_URL;
   const [user, setUser] = useState(null);
   const [tab, setTab] = useState("all");
   const [actionLoading, setActionLoading] = useState({});
@@ -83,9 +84,10 @@ export default function Profile() {
     setEditModal({
       ...product,
       price: (product.price_cents / 100).toFixed(2),
-      photoPreview: product.photo_url,
+      photoPreview: `${API_BASE_URL}/uploads/${product.photo_url.split('/').pop()}`,
     });
   };
+
 
   const closeEdit = () => setEditModal(null);
 
@@ -159,10 +161,14 @@ export default function Profile() {
             <div key={p.id} className={styles.row}>
               <Link to={`/product/${p.id}`} className={styles.linkArea}>
                 <img
-                  src={p.photo_url || "https://via.placeholder.com/80?text=No+Image"}
+                  src={
+                      p.photo_url 
+                        ? `${API_BASE_URL}/uploads/${p.photo_url.split('/').pop()}` 
+                        : "https://placehold.co/280x180?text=No+Image"
+                    }
                   alt={p.title}
                   className={styles.photo}
-                  onError={(e) => (e.target.src = "https://via.placeholder.com/80?text=No+Image")}
+                  onError={(e) => (e.target.src = "https://placehold.co/80?text=No+Image")}
                 />
                 <span className={styles.name}>{p.title}</span>
                 <span className={styles.quantity}>Quantity: {p.quantity}</span>
