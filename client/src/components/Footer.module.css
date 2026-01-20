@@ -1,0 +1,35 @@
+.footer {
+  background: #1f2937;
+  color: #d1d5db;
+  padding: 2.5rem 0 1.5rem;
+  margin-top: auto;
+  font-size: 0.875rem;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.meta {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+.heart {
+  color: #f87171;
+}
+
+.link {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
