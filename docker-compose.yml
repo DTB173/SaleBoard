@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - "54323:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data:Z
+      - ./db_script.sql:/docker-entrypoint-initdb.d/db_script.sql:Z
+
+  server:
+    build: ./server
+    depends_on:
+      - db
+    ports:
+      - "5005:5000"
+    environment:
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=${DB_NAME}
+      - DB_HOST=db
+      - JWT_SECRET=${JWT_SECRET}
+    volumes:
+      - ./server:/app:Z
+      - /app/node_modules
+      - ./server/uploads:/app/uploads:Z
+
+  client:
+    build: ./client
+    ports:
+      - "3005:3000"
+    volumes:
+      - ./client:/app:Z
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - BROWSER=none
+      - CHOKIDAR_USEPOLLING=true
+      - WDS_SOCKET_PORT=3005
+
+volumes:
+  pgdata:
