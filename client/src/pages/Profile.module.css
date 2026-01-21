@@ -347,7 +347,6 @@
 /* ROW & LINK AREA               */
 /* ────────────────────────────── */
 
-/* Replace .row with flex container */
 .row {
   display: flex;
   align-items: center;
