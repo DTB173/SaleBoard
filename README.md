@@ -21,15 +21,15 @@ Hosted version is availabe at link: http://138.2.139.84:3005/
 ## Screenshots
 
 ### Dashboard & Browsing
-![Main View]("https://github.com/user-attachments/assets/d24d1b3f-9a3e-40ff-81b7-b71387c7fa7f") 
+![Main View](https://github.com/user-attachments/assets/d24d1b3f-9a3e-40ff-81b7-b71387c7fa7f) 
 *Users can browse all offers with real-time filtering and sorting.*
 
 ### Product Management
-![Edit Mode]("https://github.com/user-attachments/assets/384fa3cb-7b93-4676-8d74-952c224f7462")
+![Edit Mode](https://github.com/user-attachments/assets/384fa3cb-7b93-4676-8d74-952c224f7462)
 *Authenticated users can edit their products, change prices, and update photos via a clean modal interface.*
 
 ### Search & Categories
-![Search View]("https://github.com/user-attachments/assets/42227528-cbb7-4191-8398-cb32e9218aff")
+![Search View](https://github.com/user-attachments/assets/42227528-cbb7-4191-8398-cb32e9218aff)
 *Integration with PostgreSQL allows for efficient searching and category-based filtering.*
 
 ## Installation & Setup
