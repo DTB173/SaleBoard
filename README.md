@@ -42,7 +42,7 @@ Hosted version is availabe at link: http://138.2.139.84:3005/
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/sale-board.git](https://github.com/your-username/sale-board.git)
+   git clone https://github.com/DTB173/SaleBoard.git
    cd sale-board
    ```
 2. **Configure Environment Variables: Create a .env file in the root directory and add:**
