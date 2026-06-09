@@ -40,8 +40,8 @@ export default function Home() {
             <Link key={p.id} to={`/product/${p.id}`} className={styles.card}>
               <img
                 src={
-                  p.photo_url 
-                    ? `${API_BASE_URL}/uploads/${p.photo_url.split('/').pop()}` 
+                  p.photo_url
+                    ? p.photo_url
                     : "https://placehold.co/280x180?text=No+Image"
                 }
                 alt={p.title}

@@ -37,9 +37,9 @@ const cloudinaryStorage = new CloudinaryStorage({
 });
 
 // 4. Dynamic Selection: Use Cloudinary in production, local disk in dev
-const selectedStorage = process.env.NODE_ENV === "production" 
-  ? cloudinaryStorage 
-  : localStorage;
+
+
+const selectedStorage = cloudinaryStorage;
 
 const fileFilter = (req, file, cb) => {
   if (file.mimetype.startsWith("image/")) cb(null, true);

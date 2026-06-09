@@ -1,19 +1,12 @@
-import pkg from "pg";
-const { Pool } = pkg;
 import dotenv from "dotenv";
+
 dotenv.config({ path: "./src/.env" });
 
-export const pool = process.env.DATABASE_URL
-  ? new Pool({
-      connectionString: process.env.DATABASE_URL,
-      ssl: {
-        rejectUnauthorized: false,
-      },
-    })
-  : new Pool({
-      user: process.env.DB_USER,
-      host: process.env.DB_HOST,
-      database: process.env.DB_NAME,
-      password: process.env.DB_PASS,
-      port: process.env.DB_PORT || 5432,
-    });
+import pkg from "pg";
+const { Pool } = pkg;
+
+console.log(process.env.DATABASE_URL);
+
+export const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});

@@ -67,7 +67,7 @@ router.post(
 
     const { title, description, price_cents, quantity, category_id } = req.body;
 
-    const photo_url = req.file ? req.file.filename : null;
+    const photo_url = req.file ? req.file.path: null;
     const { userId } = getAuth(req);
 
     console.log("USER:", userId);
@@ -358,9 +358,7 @@ router.get("/:id", async (req, res) => {
 
     await pool.query("UPDATE products SET views = views + 1 WHERE id = $1", [id]);
 
-    product.photo_url = product.photo_url
-      ? `http://localhost:5005/uploads/${product.photo_url}`
-      : null;
+
 
     res.json(product);
   } catch (err) {

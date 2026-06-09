@@ -23,6 +23,7 @@ export default function ProductDetail() {
       }
     };
 
+
     fetchProduct();
   }, [id]);
 
@@ -50,9 +51,14 @@ export default function ProductDetail() {
     );
   }
 
-  const imageUrl = product.photo_url
-    ? `${API_BASE_URL}/uploads/${product.photo_url.split("/").pop()}`
-    : "https://placehold.co/600x400?text=No+Image";
+const imageUrl = product?.photo_url
+  ? product.photo_url
+  : "https://placehold.co/600x400?text=No+Image";
+
+      console.log(product);
+console.log("PHOTO URL:", product?.photo_url);
+console.log("IMAGE URL:", imageUrl);
+
 
   const formatPhone = (phone) => {
     if (!phone) return null;
