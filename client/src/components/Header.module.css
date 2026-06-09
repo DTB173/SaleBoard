@@ -1,0 +1,85 @@
+.header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.greeting {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.greeting strong {
+  color: #111827;
+}
+
+.profileBtn,
+.logoutBtn,
+.authLink {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.profileBtn {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.profileBtn:hover {
+  background: #e5e7eb;
+}
+
+.logoutBtn {
+  color: #dc2626;
+}
+
+.logoutBtn:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.authLink {
+  color: #4b5563;
+}
+
+.authLink:hover {
+  color: #2563eb;
+}
+
+.active {
+  color: #2563eb;
+  font-weight: 600;
+}
