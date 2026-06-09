@@ -55,9 +55,7 @@ const imageUrl = product?.photo_url
   ? product.photo_url
   : "https://placehold.co/600x400?text=No+Image";
 
-      console.log(product);
-console.log("PHOTO URL:", product?.photo_url);
-console.log("IMAGE URL:", imageUrl);
+
 
 
   const formatPhone = (phone) => {

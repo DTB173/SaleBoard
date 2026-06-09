@@ -75,16 +75,14 @@ export default function Profile() {
     }
   };
 
-  const openEdit = (product) => {
-    setEditModal({
-      ...product,
-      price: (product.price_cents / 100).toFixed(2),
-      photoPreview: product.photo_url 
-        ? `${process.env.REACT_APP_API_URL}/uploads/${product.photo_url.split('/').pop()}`
-        : null,
-      newPhoto: null,
-    });
-  };
+const openEdit = (product) => {
+  setEditModal({
+    ...product,
+    price: (product.price_cents / 100).toFixed(2),
+    photoPreview: product.photo_url || null,
+    newPhoto: null,
+  });
+};
 
   const closeEdit = () => setEditModal(null);
 
@@ -156,10 +154,10 @@ export default function Profile() {
               <Link to={`/product/${p.id}`} className={styles.linkArea}>
                 <img
                   src={
-                      p.photo_url 
-                        ? `${API_BASE_URL}/uploads/${p.photo_url.split('/').pop()}` 
-                        : "https://placehold.co/280x180?text=No+Image"
-                    }
+                    p.photo_url
+                      ? p.photo_url
+                      : "https://placehold.co/280x180?text=No+Image"
+                  }
                   alt={p.title}
                   className={styles.photo}
                   onError={(e) => (e.target.src = "https://placehold.co/80?text=No+Image")}
