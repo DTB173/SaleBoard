@@ -1,7 +1,7 @@
 # Sale Board - Fullstack Marketplace App
 
 A dockerized fullstack marketplace application built with **React**, **Node.js (Express)**, and **PostgreSQL**. The app allows users to browse, search, and manage product offers with integrated image uploading. <br/>
-Hosted version is availabe at link: [(https://saleboard-omega.vercel.app/](https://saleboard-omega.vercel.app/)
+Hosted version is availabe at link: [https://saleboard-omega.vercel.app/](https://saleboard-omega.vercel.app/)
 ## Key Features
 
 - **User Authentication:** Secure login and registration using JWT.
